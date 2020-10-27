@@ -85,7 +85,8 @@ vim ~/.jupyter/jupyter_notebook_config.py
 # c.NotebookApp.port
 ```
 4. Add scripts in /etc/rc.local
--/etc/rc.local
+
+- /etc/rc.local
 ```bash
 su <username> -c "jupyter notebook --config=/location/of/your/config/file/.jupyter/jupyter_notebook_config.py --no-browser --notebook-dir=/location/of/yournotebooks" &
 ```
@@ -95,7 +96,14 @@ su <username> -c "jupyter notebook --config=/location/of/your/config/file/.jupyt
 ```bash
 curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo -E python3 - --admin \<admin-user-name>
 ```
-2. Additional information of Jupyter_HUB https://github.com/jupyterhub/the-littlest-jupyterhub
+2. Modify config file as writing config.yaml
+```bash
+sudo su
+vim /opt/tljh/config/config.yaml
+sudo tljh-config reload
+```
+
+3. Additional information of Jupyter_HUB https://github.com/jupyterhub/the-littlest-jupyterhub
 
 ## Mounting hard disk
 1. Check UUID
